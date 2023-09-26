@@ -36,5 +36,11 @@ function onConnected(socket)
     socket.on('message', (data) => {
         console.log(data);
         socket.broadcast.emit('chat-message', data)  // i should ask about broadcast
+    });
+
+
+
+    socket.on('feedback', (data) => {
+        socket.broadcast.emit('feedback', data)
     })
 }
